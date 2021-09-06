@@ -3,7 +3,7 @@ import { Repeater, RichText, Text, types } from 'react-bricks'
 import blockNames from '../blockNames'
 import Container from '../components/Container'
 
-const Banner: types.Brick = () => {
+const HeroUnit: types.Brick = () => {
   return (
     <div className="bg-default bg-cover bg-no-repeat bg-center">
       <Container className="text-white">
@@ -29,7 +29,6 @@ const Banner: types.Brick = () => {
             </p>
           )}
         />
-
         <Repeater
           propName="buttons"
           renderWrapper={(items) => (
@@ -41,10 +40,13 @@ const Banner: types.Brick = () => {
   )
 }
 
-Banner.schema = {
+HeroUnit.schema = {
   name: blockNames.heroUnit,
   label: 'Hero Unit',
-  getDefaultProps: () => ({}),
+  getDefaultProps: () => ({
+    title: 'Lorem Ipsum',
+    paragraph: 'Lorem ipsum dolor sit amet'
+  }),
   repeaterItems: [
     {
       name: 'buttons',
@@ -56,4 +58,4 @@ Banner.schema = {
   ],
 }
 
-export default Banner
+export default HeroUnit
