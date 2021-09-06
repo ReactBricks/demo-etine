@@ -9,7 +9,12 @@ interface TextImageProps {
   side: string
 }
 
-const TextImage: types.Brick<TextImageProps> = ({ side, href, buttonText, ...rest }) => {
+const TextImage: types.Brick<TextImageProps> = ({
+  side,
+  href,
+  buttonText,
+  ...rest
+}) => {
   return (
     <article {...rest}>
       <div
@@ -22,19 +27,28 @@ const TextImage: types.Brick<TextImageProps> = ({ side, href, buttonText, ...res
           <Text
             propName="title"
             placeholder="Title"
-            renderBlock={(props) => <h3 className="font-bold text-2xl mb-2">{props.children}</h3>}
+            renderBlock={(props) => (
+              <h3 className="font-bold text-2xl mb-2">{props.children}</h3>
+            )}
           />
           <Text
             propName="text"
             placeholder="Text"
             renderBlock={(props) => <p className="mb-10">{props.children}</p>}
           />
-          <Link href={href} className="bg-primary text-white font-bold py-2 px-4 rounded">
+          <Link
+            href={href}
+            className="bg-primary text-white font-bold py-2 px-4 rounded"
+          >
             {buttonText}
           </Link>
         </div>
         <div className="w-full md:w-1/2 bg-center bg-no-repeat bg-cover h-58 md:h-auto">
-          <Image propName="image" alt="" imageClassName="h-64 object-cover w-full" />
+          <Image
+            propName="image"
+            alt=""
+            imageClassName="h-64 object-cover w-full"
+          />
         </div>
       </div>
     </article>
@@ -44,6 +58,7 @@ const TextImage: types.Brick<TextImageProps> = ({ side, href, buttonText, ...res
 TextImage.schema = {
   name: blockNames.textImage,
   label: 'Text Image',
+  hideFromAddMenu: true,
   getDefaultProps: () => ({
     side: 'right',
   }),

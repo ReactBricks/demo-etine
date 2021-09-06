@@ -1,7 +1,7 @@
 const blockNames = {
-  develop: 'develop',
+  features: 'features',
   textImage: 'text-image',
   button: 'button',
-  banner: 'banner'
+  heroUnit: 'hero-unit'
 }
 export default blockNames

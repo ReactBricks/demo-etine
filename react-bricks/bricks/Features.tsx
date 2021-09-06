@@ -3,22 +3,28 @@ import { Repeater, RichText, Text, types } from 'react-bricks'
 import blockNames from '../blockNames'
 import Container from '../components/Container'
 
-const Develop: types.Brick = () => {
+const Features: types.Brick = () => {
   return (
     <Container>
       <RichText
         propName="Title"
         placeholder="Title"
         renderBlock={(props) => (
-          <h1 className="text-4xl sm:text-5xl mb-4 text-secondary">{props.children}</h1>
+          <h1 className="text-4xl sm:text-5xl mb-4 text-secondary">
+            {props.children}
+          </h1>
         )}
         allowedFeatures={[types.RichTextFeatures.Bold]}
-        renderBold={(props) => <span className="font-bold">{props.children}</span>}
+        renderBold={(props) => (
+          <span className="font-bold">{props.children}</span>
+        )}
       />
       <Text
         propName="paragraph"
         placeholder="Paragraph"
-        renderBlock={(props) => <p className="text-secondary md:w-1/2">{props.children}</p>}
+        renderBlock={(props) => (
+          <p className="text-secondary md:w-1/2">{props.children}</p>
+        )}
       />
       <div className="mt-8">
         <Repeater propName="textImage" />
@@ -27,9 +33,9 @@ const Develop: types.Brick = () => {
   )
 }
 
-Develop.schema = {
-  name: blockNames.develop,
-  label: 'Develop',
+Features.schema = {
+  name: blockNames.features,
+  label: 'Features',
   getDefaultProps: () => ({}),
   repeaterItems: [
     {
@@ -42,4 +48,4 @@ Develop.schema = {
   ],
 }
 
-export default Develop
+export default Features

@@ -11,16 +11,22 @@ const Banner: types.Brick = () => {
           propName="title"
           placeholder="Title"
           renderBlock={(props) => (
-            <h1 className="text-4xl sm:text-5xl leading-tight">{props.children}</h1>
+            <h1 className="text-4xl sm:text-5xl leading-tight">
+              {props.children}
+            </h1>
           )}
           allowedFeatures={[types.RichTextFeatures.Bold]}
-          renderBold={(props) => <span className="font-bold">{props.children}</span>}
+          renderBold={(props) => (
+            <span className="font-bold">{props.children}</span>
+          )}
         />
         <Text
           propName="paragraph"
           placeholder="Paragraph"
           renderBlock={(props) => (
-            <p className="text-xl mt-5 block max-w-4xl font-medium">{props.children}</p>
+            <p className="text-xl mt-5 block max-w-4xl font-medium">
+              {props.children}
+            </p>
           )}
         />
         <Repeater propName="buttons" />
@@ -30,8 +36,8 @@ const Banner: types.Brick = () => {
 }
 
 Banner.schema = {
-  name: blockNames.banner,
-  label: 'Banner',
+  name: blockNames.heroUnit,
+  label: 'Hero Unit',
   getDefaultProps: () => ({}),
   repeaterItems: [
     {

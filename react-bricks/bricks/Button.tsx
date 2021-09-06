@@ -22,6 +22,7 @@ const Button: types.Brick<ButtonProps> = ({ href, text, ...rest }) => {
 Button.schema = {
   name: blockNames.button,
   label: 'Button',
+  hideFromAddMenu: true,
   getDefaultProps: () => ({
     text: 'Button',
   }),
