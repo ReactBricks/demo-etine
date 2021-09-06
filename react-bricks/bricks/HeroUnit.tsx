@@ -29,7 +29,13 @@ const Banner: types.Brick = () => {
             </p>
           )}
         />
-        <Repeater propName="buttons" />
+
+        <Repeater
+          propName="buttons"
+          renderWrapper={(items) => (
+            <div className="flex flex-wrap space-x-4">{items}</div>
+          )}
+        />
       </Container>
     </div>
   )
@@ -45,7 +51,7 @@ Banner.schema = {
       itemType: blockNames.button,
       itemLabel: 'Button',
       min: 0,
-      max: 10,
+      max: 4,
     },
   ],
 }
