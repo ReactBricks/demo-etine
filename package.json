@@ -13,7 +13,7 @@
     "clsx": "^1.1.1",
     "next": "^11.1.0",
     "react": "^17.0.2",
-    "react-bricks": "^2.3.16",
+    "react-bricks": "^3.2.25",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
